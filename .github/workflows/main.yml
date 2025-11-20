@@ -76,7 +76,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-          script:
+          script: |
             docker pull ${{secrets.DOCKER_USER}}/todoapp:latest
             docker stop todoapp || true
             docker rm todoapp || true
