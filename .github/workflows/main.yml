@@ -80,7 +80,8 @@ jobs:
             docker pull ${{secrets.DOCKER_USER}}/todoapp:latest
             docker stop todoapp || true
             docker rm todoapp || true
-            docker run -d --name todoapp 8080:8080 ${{secrets.DOCKER_USER}}/todoapp:latest
+            docker run -d --name todoapp -p 8080:8080 ${{secrets.DOCKER_USER}}/todoapp:latest
+
             
 
             
